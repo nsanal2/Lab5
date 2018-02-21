@@ -8,7 +8,9 @@ import java.util.Random;
  * @see <a href="https://cs125.cs.illinois.edu/lab/8/">Lab 8 Description</a>
  */
 public class BankAccount {
-
+    /**
+     *
+     */
     public enum BankAccountType {
         /**
          *
@@ -35,7 +37,7 @@ public class BankAccount {
     /**
      *
      */
-    public BankAccountType accountType;
+    private BankAccountType accountType;
     /**
      *
      */
@@ -47,39 +49,40 @@ public class BankAccount {
     /**
      *
      */
-    public double interestRate;
+    private double interestRate;
     /**
      *
      */
     private double interestEarned;
     /**
-     *
+     * @param name owner name
+     * @param accountCategory type of account
      */
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+        ownerName = name;
+        accountType = accountCategory;
+        accountNumber = (new Random()).nextInt();
     }
     /**
-     *
+     *@return account number
      */
     public int getAccountNumber() {
         return accountNumber;
     }
     /**
-     *
+     *@return acccount balance
      */
     public double getAccountBalance() {
         return accountBalance;
     }
     /**
-     *
+     *@return ownername
      */
     public String getOwnerName() {
         return ownerName;
     }
     /**
-     *
+     *@return interest
      */
     public double getInterestEarned() {
         return interestEarned;
@@ -95,5 +98,17 @@ public class BankAccount {
      */
     public void setOwnerName(final String a) {
         ownerName = a;
+    }
+    /**
+     *@return ownername
+     */
+    public BankAccountType getAccountType() {
+        return accountType;
+    }
+    /**
+     *@return interest
+     */
+    public double getInterestRate() {
+        return interestRate;
     }
 }

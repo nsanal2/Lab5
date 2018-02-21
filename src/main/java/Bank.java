@@ -40,8 +40,12 @@ public class Bank {
      * @param amount to withdraw (double)
      * @return boolean
      */
-    public void withdrawMoney(final BankAccount bankAccount, final double amount) {
-        bankAccount.setAccountBalance(bankAccount.getAccountBalance() - abs(amount));
+    public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
+        if (amount < 0 || amount > bankAccount.getAccountBalance()) {
+            return (false);
+        }
+        bankAccount.setAccountBalance(bankAccount.getAccountBalance() - amount);
+        return (true);
     }
 
     /**
@@ -55,7 +59,11 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-        bankAccount.setAccountBalance(bankAccount.getAccountBalance() + abs(amount));
+        if (amount < 0) {
+            return (false);
+        }
+        bankAccount.setAccountBalance(bankAccount.getAccountBalance() + amount);
+        return (true);
     }
 
     /**
@@ -74,6 +82,7 @@ public class Bank {
             final double amount) {
         source.setAccountBalance(source.getAccountBalance() - abs(amount));
         destination.setAccountBalance(destination.getAccountBalance() + abs(amount));
+        return true;
     }
 
     /**
