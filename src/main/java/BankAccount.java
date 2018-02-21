@@ -9,30 +9,91 @@ import java.util.Random;
  */
 public class BankAccount {
 
-    /*
-     * You may want to use this to distinguish between different kinds of accounts.
-     */
     public enum BankAccountType {
+        /**
+         *
+         */
         CHECKINGS,
+        /**
+         *
+         */
         SAVINGS,
+        /**
+         *
+         */
         STUDENT,
+        /**
+         *
+         */
         WORKPLACE
     }
 
+    /**
+     *
+     */
     private int accountNumber;
+    /**
+     *
+     */
     public BankAccountType accountType;
+    /**
+     *
+     */
     private double accountBalance;
+    /**
+     *
+     */
     private String ownerName;
+    /**
+     *
+     */
     public double interestRate;
+    /**
+     *
+     */
     private double interestEarned;
-
+    /**
+     *
+     */
     public BankAccount(final String name, final BankAccountType accountCategory) {
         /*
          * Implement this function
          */
     }
-
-    /*
-     * Implement getters and setters as appropriate for private variables.
+    /**
+     *
      */
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+    /**
+     *
+     */
+    public double getAccountBalance() {
+        return accountBalance;
+    }
+    /**
+     *
+     */
+    public String getOwnerName() {
+        return ownerName;
+    }
+    /**
+     *
+     */
+    public double getInterestEarned() {
+        return interestEarned;
+    }
+    /**
+     *@param a new balance
+     */
+    public void setAccountBalance(final double a) {
+        accountBalance = a;
+    }
+    /**
+     * @param a new name
+     */
+    public void setOwnerName(final String a) {
+        ownerName = a;
+    }
 }
